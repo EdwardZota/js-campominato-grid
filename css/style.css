@@ -19,6 +19,14 @@ header #left{
     height: 100%;
 }
 
+header #right{
+    display: flex;
+}
+
+header #right select{
+    margin-right: 10px;
+}
+
 header img{
     height: 100%;
     margin-left: -15px;
@@ -62,14 +70,28 @@ main span{
 }
 
 .box{
-    height: calc(100% / 10);
-    width: calc(100% / 10);
     border: 2px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 25px;
 }
+
+.box-1{
+    height: calc(100% / 10);
+    width: calc(100% / 10);
+}
+
+.box-2{
+    height: calc(100% / 9);
+    width: calc(100% / 9);
+}
+
+.box-3{
+    height: calc(100% / 7);
+    width: calc(100% / 7);
+}
+
 
 footer span{
     line-height: 80px;
