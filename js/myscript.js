@@ -44,23 +44,18 @@ function createFullGrid(){
     if(selected.value == "easy"){
         numberInteraction=100;
         classBox="box-1";
-        gridGeneral = general(numberInteraction,classBox);
-        
     
     }else if(selected.value == "medium"){
         numberInteraction=81;
         classBox="box-2";
-        gridGeneral = general(numberInteraction,classBox);
     
         
     }else if(selected.value == "hard"){
         numberInteraction=49;
         classBox="box-3";
-        gridGeneral = general(numberInteraction,classBox);
-    
-        
     }
 
+    gridGeneral = general(numberInteraction,classBox);
     
 }
 // funzione generale completata
