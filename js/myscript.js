@@ -7,93 +7,23 @@ const title = document.getElementById('title');
 const selected = document.getElementById('difficult');
 
 
+let numberInteraction;
 
+let classBox;
 
-const boxArray =[];
+let gridGeneral;
 
+let fullGrid;
 
 play.addEventListener('click', function(){
     title.classList.add('d-none');
 
-    if(boxArray.length == 0){
+        containerDom.innerHTML="";
 
-        if(selected.value == "easy"){
+        fullGrid = createFullGrid();
 
-            for( let i = 1; i <= 100; i++){
-
-                const currentSquare = createSquare();
-
-                currentSquare.classList.add('box-1');
-            
-                currentSquare.append(i);
-            
-                currentSquare.addEventListener('click', function() {
-                    this.classList.toggle('cyan');
-                    console.log(`Hai scelto la casella numero: ${i}`);
-                }
-                )
-            
-                containerDom.append(currentSquare);
-                boxArray.push(currentSquare);
-    
-            }
-    
-            console.log(boxArray);
-        }else if(selected.value == "medium"){
-
-            for( let i = 1; i <= 81; i++){
-
-                const currentSquare = createSquare();
-
-                currentSquare.classList.add('box-2');
-            
-                currentSquare.append(i);
-            
-                currentSquare.addEventListener('click', function() {
-                    this.classList.toggle('cyan');
-                    console.log(`Hai scelto la casella numero: ${i}`)
-                }
-                )
-            
-                containerDom.append(currentSquare);
-                boxArray.push(currentSquare);
-    
-            }
-    
-            console.log(boxArray);
-        }else if(selected.value == "hard"){
-
-            for( let i = 1; i <= 49; i++){
-
-                const currentSquare = createSquare();
-
-                currentSquare.classList.add('box-3');
-            
-                currentSquare.append(i);
-            
-                currentSquare.addEventListener('click', function() {
-                    this.classList.toggle('cyan');
-                    console.log(`Hai scelto la casella numero: ${i}`)
-                }
-                )
-            
-                containerDom.append(currentSquare);
-                boxArray.push(currentSquare);
-    
-            }
-    
-            console.log(boxArray);
-        }
-
-
-
-    }
-
-    }
+}
 )
-
-
-
 
 
 //funzioni
@@ -106,4 +36,51 @@ function createSquare(){
 
 
     return currentElement;
+}
+
+//funzione di creazione completa della griglia per evitare ripetizione
+
+function createFullGrid(){
+    if(selected.value == "easy"){
+        numberInteraction=100;
+        classBox="box-1";
+        gridGeneral = general(numberInteraction,classBox);
+        
+    
+    }else if(selected.value == "medium"){
+        numberInteraction=81;
+        classBox="box-2";
+        gridGeneral = general(numberInteraction,classBox);
+    
+        
+    }else if(selected.value == "hard"){
+        numberInteraction=49;
+        classBox="box-3";
+        gridGeneral = general(numberInteraction,classBox);
+    
+        
+    }
+
+    
+}
+// funzione generale completata
+
+function general(numberInteraction,classBox){
+    for( let i = 1; i <= numberInteraction; i++){
+
+        const currentSquare = createSquare();
+    
+        currentSquare.classList.add(classBox);
+    
+        currentSquare.append(i);
+    
+        currentSquare.addEventListener('click', function() {
+            this.classList.toggle('cyan');
+            console.log(`Hai scelto la casella numero: ${i}`)
+        }
+        )
+    
+        containerDom.append(currentSquare);
+    
+    }
 }
