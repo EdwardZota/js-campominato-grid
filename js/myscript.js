@@ -1,15 +1,32 @@
 const containerDom = document.querySelector('.container');
 
+const play = document.getElementById('play');
+
+const title = document.getElementById('title');
+
 for( let i = 1; i <= 100; i++){
 
     const currentSquare = createSquare();
 
-    currentSquare.append(i)
+    currentSquare.append(i);
+
+    currentSquare.addEventListener('click', function() {
+        this.classList.toggle('cyan');
+        console.log(`Hai scelto la casella numero: ${i}`)
+    }
+    )
 
     containerDom.append(currentSquare);
 }
 
+play.addEventListener('click', function(){
+    title.classList.add('d-none');
 
+    
+
+    
+}
+)
 
 
 
@@ -23,5 +40,5 @@ function createSquare(){
     currentElement.classList.add('box');
 
 
-    return currentElement
+    return currentElement;
 }

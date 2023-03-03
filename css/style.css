@@ -43,6 +43,16 @@ main{
     padding: 50px 0;
 }
 
+main span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+    height: 100%;
+    
+}
+
 .container{
     width: 650px;
     height: 650px;
@@ -61,7 +71,14 @@ main{
     font-size: 25px;
 }
 
-
 footer span{
     line-height: 80px;
+}
+
+.cyan{
+    background-color: cyan;
+}
+
+.d-none{
+    display: none;
 }
